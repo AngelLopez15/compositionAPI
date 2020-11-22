@@ -14,6 +14,13 @@
 
     <input type="text" v-model="texto">
     <p>{{texto}}</p>
+
+    <hr>
+    <!-- Ocupando el componente hijo (boton) en el componente padre (About) -->
+    <!-- Para pasar el evento debemos usar el accion -->
+    <Btn :textoBoton="'Aumentar'" @accion="aumentar" />
+    <Btn :textoBoton="'Disminuir'" @accion="disminuir" />
+
   </div>
 </template>
 
@@ -21,6 +28,8 @@
 // ref se necesita para que nuestros valores sean reactivos
 import { computed, ref } from 'vue'
 import Titulo from '../components/Titulo'
+import Btn from '../components/Btn'
+
 // Asi seria trabajar el contador con la API de composicion
 export default {
   // tenemos el setup. El setup se ejecuta antes de que se cree el componente,
@@ -30,7 +39,8 @@ export default {
 
   // Los componentes se digue trabajando igual que en vue 2
   components:{
-    Titulo
+    Titulo,
+    Btn
   },
 
   // En el setup NO se incorporan los componentes, No se incorporan los props, No se incorpora
