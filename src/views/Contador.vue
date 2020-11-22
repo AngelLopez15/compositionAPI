@@ -21,6 +21,7 @@ export default {
     return {...useContador()}
 
     // La forma larga de hacer lo mismo de la linea de arriba seria:
+    
     // const {contador, aumentar, disminuir} = useContador()
     // return {contador, aumentar, disminuir}  
 

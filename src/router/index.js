@@ -20,6 +20,19 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
+    path: '/paises',
+    name:'Paises',
+    component: () => import('../views/Paises.vue')
+  },
+  {
+    // creando una ruta dinamica para cada pais
+    path: '/paises/:nombre',
+    name:'Pais',
+    // activamos los true para poder acceder al nombre en los params de la url de la ruta dinamica
+    props:true,
+    component: () => import('../views/Pais.vue')
   }
 ]
 
